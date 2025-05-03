@@ -1,0 +1,153 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.top-nav {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.container {
+    overflow-y: auto;
+    height: 100vh;
+}
+
+/*for section 1 */
+.section1 {
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+
+    background: url("https://images.steamusercontent.com/ugc/1688276024726983230/06CDFF4941AD9ACB7E9AE7A07D3D42C69BD282D7/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true") no-repeat center center;
+    background-size: cover;
+}
+.section1 h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+/* end of section 1 */
+
+/* for section 2*/
+.section2 {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+
+.link-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-top: 50px;
+}
+
+.section2 h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+/* end of section 2*/
+
+
+/*footer (bottom of page)*/
+.footer {
+    width: 100%;
+    height: 8vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #222;
+    color: white;
+    font-size: 1.2em;
+    margin-top: auto;
+}
+
+.footer nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.footer nav a:hover {
+    text-decoration: underline;
+}
+/*end of footer*/
+
+/*start of link design*/
+a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+  }
+
+  
+  .image-container {
+    display: flex;
+    flex-direction: column; /* Stacks image and label */
+    align-items: center; /* Centers everything */
+    text-decoration: none;
+    margin: 50px;
+    text-align: center;
+  }
+  
+  .image-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover Effect */
+  .image-container:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Label Styling */
+  .image-container .label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px; /* Ensures proper spacing */
+  }
+  
+/*end of link design*/
+
+  
+
+#section2 { background: white; }
+#section3 { background: black; }
