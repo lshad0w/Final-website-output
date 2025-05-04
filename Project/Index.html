@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Screen Scroll</title>
+    <title>Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,8 +18,8 @@
             <h1>Projects</h1>
         
             <div class="link-container">
-                <a href="teachable-machine.html" class="image-container">
-                    <img src="home-icon.png" alt="Teachable Machine">
+                <a href="https://github.com/lshad0w/Sentiment-analysis/blob/main/website%20sentiment%20analysis/Website%20codes/index.html" class="image-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhlltYJ2lRINotYHGoXJuusGjENUG7VqULXg&s" alt="Teachable Machine">
                     <p class="label">Teachable Machine</p>
                 </a>
                 
@@ -29,20 +29,45 @@
                 </a>
                 
                 <a href="sentiment-analysis.html" class="image-container">
-                    <img src="about-icon.png" alt="Sentiment Analysis">
+                    <img src="https://media.sproutsocial.com/uploads/2024/10/Sentiment-analysis-Final.svg" alt="Sentiment Analysis">
                     <p class="label">Sentiment Analysis</p>
                 </a>
             </div>
         </div>
         
         
-        <div class="section1" id="section3">
-            Section 3
-        </div>
+        <div class="section3" id="section3">
+            <h1>Project Snapshots</h1>
+            
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <img src="images/sentiment.png" alt="Project 3">
+                        <p class="image-label">Sentiment Analysis</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/teachable.png" alt="Project 1">
+                        <p class="image-label">Teachable Machine</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.sproutsocial.com/uploads/2024/10/Sentiment-analysis-Final.svg" alt="Project 2">
+                        <p class="image-label">Chatbot</p>
+                    </div>
 
+                </div>
+            </div>
+        
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+        
+        
+        
+        
         <footer class="footer">
             <div class="footer-content">
-                <p>&copy; Lingad</p>
+                <p>&copy; Lingad | CS301</p>
             </div>
         </footer>
     </div>
@@ -61,8 +86,42 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
+
+  let currentIndex = 0;
+  const items = document.querySelectorAll(".carousel-item");
+
+  function moveCarousel(direction) {
+      // Calculate the new index
+      const newIndex = (currentIndex + direction + items.length) % items.length;
+
+      // Set the current and new items
+      const currentItem = items[currentIndex];
+      const nextItem = items[newIndex];
+
+      // Determine the direction of movement
+      const offset = direction > 0 ? "100%" : "-100%";
+
+      // Animate the current item out
+      currentItem.style.transition = "left 0.5s ease-in-out, opacity 0.5s ease-in-out";
+      currentItem.style.left = direction > 0 ? "-100%" : "100%";
+      currentItem.style.opacity = "0";
+
+      // Position the next item and animate it in
+      nextItem.style.transition = "none";
+      nextItem.style.left = offset;
+      nextItem.style.opacity = "0";
+      setTimeout(() => {
+          nextItem.style.transition = "left 0.5s ease-in-out, opacity 0.5s ease-in-out";
+          nextItem.style.left = "0";
+          nextItem.style.opacity = "1";
+      }, 50);
+
+      // Update the current index
+      currentIndex = newIndex;
+  }
+
+  // Expose the function globally for button onclick handlers
+  window.moveCarousel = moveCarousel;
 });
-
-
 </script>
 </html>
