@@ -15,12 +15,22 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndex = 0;
     const items = document.querySelectorAll(".carousel-item");
     const dots = document.querySelectorAll(".dot");
+    let autoPlayInterval;
+    const autoPlayDelay = 4000; // 4 seconds
     
     // Update dots to show which slide is active
     function updateDots(index) {
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
       });
+    }
+
+    // Function to reset and start auto-play
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(() => {
+            moveCarousel(1); // Move to the next slide
+        }, autoPlayDelay);
     }
     
     // Function to jump directly to a specific slide
@@ -47,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Update currentIndex
         currentIndex = index;
         updateDots(currentIndex);
+        resetAutoPlay(); // Reset auto-play timer on manual interaction
       }, 50);
     }
   
@@ -78,10 +89,15 @@ document.addEventListener("DOMContentLoaded", function() {
   
       currentIndex = newIndex;
       updateDots(currentIndex); // Update the active dot
+      if (direction !== undefined) { // Check if called by user or auto-play
+        resetAutoPlay(); // Reset auto-play timer on manual interaction
+      }
     }
   
     // Initialize the dots
     updateDots(0);
+    // Start auto-play
+    resetAutoPlay();
   
     // Expose functions to global scope for HTML onclick attributes
     window.moveCarousel = moveCarousel;
