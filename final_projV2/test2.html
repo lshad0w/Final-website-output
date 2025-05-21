@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.onload = function() {
+            setTimeout(function() { // Timeout to ensure it runs after any other potential scroll adjustments
+                window.scrollTo(0, 0);
+            }, 0);
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="section1" id="section1">
+            <div class="top-nav-container">
+                <div class="moon-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </div>
+                <nav class="top-nav">
+                    <a href="#section2">Projects</a>
+                    <a href="#section3">Project Snapshots</a>
+                    <a href="#about">About</a>
+                </nav>
+            </div>
+            <h1>Shadow</h1>
+        </div>
+        
+        
+        <div class="section3" style="background-color: white;" id="about">
+            <h1 style="color: black;">About</h1>
+            <p id="about-intro" style="color: black;"> <!-- Added style for text color -->
+                Hello! I'm [Your Name/Nickname], a passionate [Your Profession/Student] with a keen interest in [Your Interests/Field]. This portfolio showcases some of the projects I've worked on, demonstrating my skills in [mention 2-3 key skills]. I'm always eager to learn and take on new challenges.
+            </p>
+        </div>
+
+        <div class="section2" id="section2">
+            <h1>Projects</h1>
+        
+            <div class="link-container">
+                <a href="https://github.com/lshad0w/Sentiment-analysis/blob/main/website%20sentiment%20analysis/Website%20codes/index.html" class="image-container">
+                    <img src="images/teach.png" alt="Teachable Machine">
+                    <p class="label">Teachable Machine</p>
+                </a>
+                
+                <a href="chat-bot.html" class="image-container">
+                    <img src="https://d2vrvpw63099lz.cloudfront.net/do-i-need-a-chatbot/header-chat-box.png" alt="Chatbot">
+                    <p class="label">Chatbot</p>
+                </a>
+                
+                <a href="sentiment-analysis.html" class="image-container">
+                    <img src="https://media.sproutsocial.com/uploads/2024/10/Sentiment-analysis-Final.svg" alt="Sentiment Analysis">
+                    <p class="label">Sentiment Analysis</p>
+                </a>
+
+                <a href="sentiment-analysis.html" class="image-container">
+                    <img src="https://images.steamusercontent.com/ugc/950707391366700990/0AB9E707CBFE7247F569C091138243DD30690E33/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Sentiment Analysis">
+                    <p class="label">Expert System</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section3" id="section3">
+            <h1>Project Snapshots</h1>
+            <!--<button class="prev" onclick="moveCarousel(-1)">&#10094;</button>-->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <img src="images/sentiment.png" alt="Project 3">
+                            <p class="image-label">Sentiment Analysis</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/teachable.png" alt="Project 1">
+                            <p class="image-label">Teachable Machine</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/chatbot.png" alt="Project 2">
+                            <p class="image-label">Chatbot</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://media.sproutsocial.com/uploads/2024/10/Sentiment-analysis-Final.svg" alt="Project 2">
+                            <p class="image-label">Expert System</p>
+                        </div>
+                    </div>    
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="jumpToSlide(0)"></span>
+                        <span class="dot" onclick="jumpToSlide(1)"></span>
+                        <span class="dot" onclick="jumpToSlide(2)"></span>
+                        <span class="dot" onclick="jumpToSlide(3)"></span>
+                    </div>
+                </div>
+            <!--<button class="next" onclick="moveCarousel(1)">&#10095;</button>-->
+        </div>
+
+
+        <footer class="footer" id="footer">
+            <div class="footer-content">
+                <p>&copy; Lingad | CS301</p>
+            </div>
+        </footer>
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+</html>
